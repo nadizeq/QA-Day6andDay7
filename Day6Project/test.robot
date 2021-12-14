@@ -17,11 +17,11 @@ Token Field
     CheckTokenField
 Create Button
     CheckCreateButton
-#API Key
-#    CreateAPIKey
+API Key
+    CreateAPIKey
 
 Project2-LogIn
     Login   ${my_email}  ${my_pw}   ${link2}
 
-#Project2-SelectReason
-#    SelectReason
+Project2-SelectReason
+    SelectReason

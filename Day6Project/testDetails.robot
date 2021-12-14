@@ -14,6 +14,7 @@ Login
      maximize browser window
 #	 Set window     1280    1028
      sleep  2
+     wait until page contains element   ${login_auth_button}
      Click Element   ${login_auth_button}
      sleep  4
      click element    name=email
@@ -33,6 +34,7 @@ SelectCheckboxScopes
     sleep   2
     wait until page does not contain element    //*[contains(@class, 'initial-loader account__initial-loader')]     60
     sleep   2
+    wait until page contains    Read    60
     click element   //*[text()="Read"]
     sleep   1
     click element   //*[text()="Read"]
@@ -58,6 +60,8 @@ SelectCheckboxScopes
     sleep   2
 
 CheckTokenField
+    sleep   2
+    wait until page contains element    //*[@type="text"]   60
     press keys  //*[@type="text"]   SHIFT+8
     press keys  //*[@type="text"]   SHIFT+8
     press keys  //*[@type="text"]   SHIFT+8
@@ -69,6 +73,8 @@ CheckTokenField
     sleep   2
 
 CheckCreateButton
+    sleep   2
+    wait until page contains    Read    60
     click element   //*[text()="Read"]
     click element   //*[text()="Trading information"]
 #    sleep   2
@@ -103,7 +109,10 @@ CreateAPIKey
     sleep   1
     press keys  //*[@type="text"]   Test1
     sleep   1
-    wait until page contains    Create
+    click element   //*[text()="Read"]
+    click element   //*[text()="Trading information"]
+    sleep   1
+    wait until page contains    Create  60
     click element   //*[text()="Create"]
     sleep   2
     wait until page contains    Delete     30
@@ -117,34 +126,49 @@ CreateAPIKey
     click element   //*[text()="No"]
     sleep   2
     wait until page contains    Yes     30
-    click element   //*[text()="Create"]
+    click element   //*[text()="Yes"]
     sleep   2
 
 SelectReason
-    wait until page contains    Continue to account deactivation
-    click element   //*[text()='Continue to account deactivation']
+    sleep   2
+    wait until page does not contain element    //*[contains(@class, 'initial-loader account__initial-loader')]     60
+
+    wait until page contains    Continue to account deactivation    60
+    click element   //*[contains(text(),'Continue to account deactivation')]
     sleep   2
     wait until page contains   Read     60
     sleep   2
-    click element   //*[text()="Read"]
+    click element   //*[text()="I want to stop myself from trading.]
     sleep   1
-    click element   //*[text()="Read"]
+    click element   //*[text()="I want to stop myself from trading"]
     sleep   2
-    click element   //*[text()="Trade"]
+    click element   //*[text()="I'm no longer intrested in trading."]
     sleep   1
-    click element   //*[text()="Trade"]
+    click element   //*[text()="I'm no longer intrested in trading."]
     sleep   2
-    click element   //*[text()="Payments"]
+    click element   //*[text()="I prefer another trading website."]
     sleep   1
-    click element   //*[text()="Payments"]
+    click element   //*[text()="I prefer another trading website."]
     sleep   2
-    click element   //*[text()="Admin"]
+    click element   //*[text()="The platforms aren't user-friendly."]
     sleep   1
-    click element   //*[text()="Admin"]
+    click element   //*[text()="The platforms aren't user-friendly."]
     sleep   2
-    click element   //*[text()="Trading information"]
+    click element   //*[text()="Making deposits and withdrawals is difficult."]
     sleep   1
-    click element   //*[text()="Trading information"]
+    click element   //*[text()="Making deposits and withdrawals is difficult."]
+    sleep   2
+    click element   //*[text()="The platforms lack key features or functionality."]
+    sleep   1
+    click element   //*[text()="The platforms lack key features or functionality."]
+    sleep   2
+    click element   //*[text()="Customer service was unsatisfactory."]
+    sleep   1
+    click element   //*[text()="Customer service was unsatisfactory."]
+    sleep   2
+    click element   //*[text()="I'm deactivating my account for other reasons."]
+    sleep   1
+    click element   //*[text()="I'm deactivating my account for other reasons."]
     sleep   2
 
 
