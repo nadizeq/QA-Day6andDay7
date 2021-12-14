@@ -1,2 +1,0 @@
--v my_email:adsad2247@gmail.com
--v my_pw:Testing1234
